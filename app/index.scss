@@ -1,0 +1,43 @@
+$red: #FF6188;
+$orange: #FC9867;
+$yellow: #FFD866;
+$green: #A9DC76;
+$light-blue: #78DCE8;
+$blue: #6186d6;
+$purple: #AB9DF2;
+$base: #221F22;
+$darker: #19181A;
+$elevated-0: #2D2A2E;
+$elevated-1: #403E41;
+$text: #FCFCFA;
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  background-color: $darker;
+  font-family: monospace;
+  color: $text;
+}
+
+.panel-container {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+}
+
+.panel {
+  overflow: auto;
+  background-color: $base;
+}
+
+.panel-gutter {
+  width: 2px;
+  cursor: col-resize;
+  background-color: $elevated-0;
+  flex-shrink: 0;
+}
