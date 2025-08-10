@@ -5,8 +5,8 @@ $green: #A9DC76;
 $light-blue: #78DCE8;
 $blue: #6186d6;
 $purple: #AB9DF2;
-$base: #221F22;
-$darker: #19181A;
+$base: #202020;
+$darker: #1e1e1e;
 $elevated-0: #2D2A2E;
 $elevated-1: #403E41;
 $text: #FCFCFA;
@@ -25,55 +25,51 @@ main.main-container {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-}
-
-.panel-container {
   display: flex;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+  flex-direction: column;
 }
-
-.panel-wrapper {
-  overflow: hidden;
-}
-
-.panel {
-  width: 100%;
-  height: 100%;
-  background-color: $base;
-  padding: 1rem;
-  overflow: hidden;
-  box-sizing: border-box;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.panel-gutter {
-  background-color: $elevated-0;
-  flex-shrink: 0;
-
-  &.horizontal {
-    width: 2px;
-    cursor: col-resize;
-  }
-
-  &.vertical {
-    height: 2px;
-    cursor: row-resize;
-  }
-}
-
-
-
 
 .radar-2d {
   background-color: $darker;
   border: 1px solid $elevated-1;
   aspect-ratio: 1 / 1;
   height: 100%;
-  width: auto; 
+  width: auto;
   max-width: 100%;
+}
+
+.status-bar {
+  width: 100vw;
+  height: 2rem;
+  background-color: $darker;
+  padding: 0.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.status-bar .icon {
+  width: 15px;
+  height: 15px;
+  padding: 0;
+  margin: 0;
+  color: $text;
+}
+
+.status-bar span {
+  font-size: medium;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid $elevated-0;
+}
+
+.top {
+  position: absolute;
+  top: 0;
+  border-bottom: 1px solid $elevated-0;
 }

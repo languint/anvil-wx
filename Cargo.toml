@@ -1,5 +1,6 @@
 [workspace]
-members = [ "anvil-core","app"]
+members = ["anvil-core", "app"]
 resolver = "3"
 
 [workspace.dependencies]
+anvil-core = { path = "anvil-core" }

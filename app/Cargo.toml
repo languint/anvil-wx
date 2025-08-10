@@ -6,4 +6,10 @@ description = "Web app for anvil-wx"
 
 [dependencies]
 web-sys = "0.3.77"
-yew = { version="0.21", features=["csr"] }
+yew = { version = "0.21", features = ["csr"] }
+yew_icons = { version = "0.8.0", features = [
+    "OcticonsAlert16",
+    "OcticonsAlertFill12",
+] }
+anvil-core = { workspace = true }
+chrono = { version = "0.4.41", features = ["wasmbind"] }

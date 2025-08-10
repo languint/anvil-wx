@@ -1,2 +1,2 @@
-pub mod panel;
 pub mod radar_2d;
+pub mod status_bar;
