@@ -12,7 +12,8 @@ $elevated-1: #403E41;
 $text: #FCFCFA;
 
 html,
-body {
+body,
+main.main-container {
   width: 100vw;
   height: 100vh;
   margin: 0;
@@ -20,24 +21,59 @@ body {
   background-color: $darker;
   font-family: monospace;
   color: $text;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .panel-container {
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  overflow: hidden;
   display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.panel-wrapper {
+  overflow: hidden;
 }
 
 .panel {
-  overflow: auto;
+  width: 100%;
+  height: 100%;
   background-color: $base;
+  padding: 1rem;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .panel-gutter {
-  width: 2px;
-  cursor: col-resize;
   background-color: $elevated-0;
   flex-shrink: 0;
+
+  &.horizontal {
+    width: 2px;
+    cursor: col-resize;
+  }
+
+  &.vertical {
+    height: 2px;
+    cursor: row-resize;
+  }
+}
+
+
+
+
+.radar-2d {
+  background-color: $darker;
+  border: 1px solid $elevated-1;
+  aspect-ratio: 1 / 1;
+  height: 100%;
+  width: auto; 
+  max-width: 100%;
 }
