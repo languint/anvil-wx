@@ -1,15 +1,15 @@
-$red: #FF6188;
-$orange: #FC9867;
-$yellow: #FFD866;
+$red: #F14C4C;
+$orange: #CE9178;
+$yellow: #D7BA7D;
 $green: #A9DC76;
-$light-blue: #78DCE8;
-$blue: #6186d6;
-$purple: #AB9DF2;
-$base: #202020;
-$darker: #1e1e1e;
-$elevated-0: #2D2A2E;
-$elevated-1: #403E41;
-$text: #FCFCFA;
+$light-blue: #9CDCFE;
+$blue: #569CD0;
+$purple: #DA70D6;
+$base: #1F1F1F;
+$darker: #181818;
+$elevated-0: #232323;
+$elevated-1: #454545;
+$text: #CCCCCC;
 
 html,
 body,
@@ -29,13 +29,38 @@ main.main-container {
   flex-direction: column;
 }
 
+.main-container-contents {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: calc(100vh - 5rem);
+  position: absolute;
+  top: 2.5rem;
+}
+
 .radar-2d {
   background-color: $darker;
-  border: 1px solid $elevated-1;
-  aspect-ratio: 1 / 1;
+  border: 1px solid $elevated-0;
+}
+
+.radar-2d canvas {
+  background-color: $darker;
+}
+
+.radar-grid {
+  width: 100%;
   height: 100%;
-  width: auto;
-  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0;
+}
+
+
+.sidebar {
+  background-color: $darker;
+  border-right: 1px solid $elevated-0;
+  width: 12rem;
 }
 
 .status-bar {

@@ -1,10 +1,21 @@
-use anvil_core::warnings::{TornadoWarning, Warning, WarningPolygon};
+use anvil_core::{
+    radar::RadarSite,
+    warnings::{TornadoWarning, Warning, WarningPolygon},
+};
 use yew::prelude::*;
 
-use crate::components::status_bar::{BottomStatusBar, TopStatusBar};
+use crate::components::{
+    radar_grid::RadarGrid,
+    sidebar::Sidebar,
+    status_bar::{BottomStatusBar, TopStatusBar},
+};
 
 #[function_component(App)]
 pub fn app() -> Html {
+    let radar_site = use_state(|| RadarSite {
+        identifier: "KLOT".to_string(),
+    });
+
     let warnings = use_state(|| {
         vec![Warning {
             polygon: WarningPolygon {},
@@ -16,7 +27,11 @@ pub fn app() -> Html {
     });
     html! {
         <main class="main-container">
-            <TopStatusBar />
+            <div class="main-container-contents">
+                <Sidebar />
+                <RadarGrid radar_site={radar_site.clone()} warnings={warnings.clone()}/>
+            </div>
+            <TopStatusBar {radar_site}/>
             <BottomStatusBar {warnings}/>
         </main>
     }
