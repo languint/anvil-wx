@@ -5,7 +5,7 @@ edition = "2021"
 description = "Web app for anvil-wx"
 
 [dependencies]
-web-sys = "0.3.77"
+web-sys = { version = "0.3.77", features = ["CanvasRenderingContext2d", "HtmlCanvasElement"] }
 yew = { version = "0.21", features = ["csr"] }
 yew_icons = { version = "0.8.0", features = [
     "OcticonsAlert16",

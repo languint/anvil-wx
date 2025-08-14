@@ -1,7 +1,7 @@
 use anvil_core::{radar::RadarSite, warnings::Warning};
 use yew::{function_component, html, Html, Properties, UseStateHandle};
 
-use crate::components::radar_2d::Radar2D;
+use crate::components::radar::radar_2d::Radar2D;
 
 #[derive(Properties, PartialEq)]
 pub struct RadarGridProps {
